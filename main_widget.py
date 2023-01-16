@@ -19,10 +19,10 @@ class MainWidget(QWidget):
         hbox.addWidget(openGLWidget)
 
         groupBox = QGroupBox("Gravity")
-        self.gravityLineBox = QDoubleSpinBox(minimum=-20, maximum=-0.1,
+        self.gravitySpinBox = QDoubleSpinBox(minimum=-20, maximum=-0.1,
             value=-9.8, singleStep=0.1)
         groupBoxLayout = QVBoxLayout()
-        groupBoxLayout.addWidget(self.gravityLineBox)
+        groupBoxLayout.addWidget(self.gravitySpinBox)
         groupBox.setLayout(groupBoxLayout)
 
         vbox = QVBoxLayout()
@@ -39,4 +39,4 @@ class MainWidget(QWidget):
         self.restart.connect(openGLWidget.restartSlot)
 
     def onRestartClick(self):
-        self.restart.emit(self.gravityLineBox.value())
+        self.restart.emit(self.gravitySpinBox.value())
