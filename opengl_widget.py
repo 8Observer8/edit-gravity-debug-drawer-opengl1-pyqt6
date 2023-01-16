@@ -62,7 +62,7 @@ class OpenGLWidget(QOpenGLWidget):
         platformBody = self.world.CreateBody(platformBodyDef)
         platformFixtureDef = b2FixtureDef()
         platformFixtureDef.shape = platformShape
-        boxFixtureDef.density = 2
+        platformFixtureDef.density = 2
         platformBody.CreateFixture(platformFixtureDef)
         platformBody.position = b2Vec2(100 / self.WORLD_SCALE, 50 / self.WORLD_SCALE)
         platformBody.angle = math.radians(-10)
